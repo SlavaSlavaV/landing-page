@@ -1,0 +1,96 @@
+// POPUP
+
+.popup
+	position: relative
+	display: flex
+	justify-content: center
+	max-width: 480px
+	margin: auto
+	padding: 4rem
+	background-color: $light
+	+xs(padding, 3rem 1.5rem 1.5rem 1.5rem)
+	&__content
+		& > p 
+			text-align: center
+			+sm(font-size, 1.8rem)
+	&__title
+		margin-bottom: 2rem
+		font-weight: 700
+		font-size: 2.8rem
+		text-align: center
+		color: $accent
+		+xs(margin-bottom, 1rem)
+	&__form
+		margin-top: 4rem
+		+xs(margin-top, 3rem)
+.form
+	width: 100%
+	&__item
+		margin-bottom: 3rem
+		+xs(margin-bottom, 2.5rem)
+		& > input 
+			min-width: 100%
+			min-height: 60px
+			padding: 0 15px
+			border: 2px solid #CECECE
+			background-color: #fbfbfb
+			line-height: 60px
+			font: 
+				family: $userFont
+				weight: $fontWeight
+				size: $fontSize
+			color: $txtcolor	
+		& > label
+			display: block 
+			margin-bottom: 1rem
+			font-size: 16px
+			line-height: 1
+			color: $txtcolor
+	&__button 
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		min-width: 100%
+		min-height: 60px
+		font: 
+			family: $userFont
+			weight: 600
+			size: 1.8rem
+		line-height: 1
+		background-color: $accent
+		color: $light
+		transition: background-color 0.3s ease
+		+from(992px) 
+			&:hover, 
+			&:focus 
+				background-color: $hover
+		&:active
+			background-color: $active
+
+// magnific popap
+
+.mfp-img-mobile .mfp-close
+	background: transparent !important
+
+// animation magnific popap
+
+.mfp-zoom-in
+	.mfp-with-anim
+		opacity: 0
+		transform: scale(0.8)
+		transition: all 0.3s ease-in-out
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg
+			opacity: 0.5
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(0.8)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0

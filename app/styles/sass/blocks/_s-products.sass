@@ -1,0 +1,82 @@
+// SECTION PRODUCTS
+
+.products
+	&__col
+		margin-bottom: 10rem
+		+lg(margin-bottom, 8rem)
+		+md(margin-bottom, 6rem)
+		+sm(margin-bottom, 4rem)
+		&:last-child
+			margin-bottom: 0
+	&__title
+		max-width: 58rem
+		+md(max-width, 43rem)
+	&__row
+		+row-flex() 
+		justify-content: center
+		margin-top: 4rem
+		+lg(margin-top, 3rem)
+		+md(margin-top, 2rem)
+		+sm(margin-top, 1rem)
+	&__card
+		+col() 
+		+size(4)
+		padding: 5rem 2rem
+		margin-top: 2rem
+		&:last-child 
+			margin-bottom: 0
+		+lg(padding, 4rem 2rem)
+		+size-md(6)
+		+size-xs(12)
+
+.card
+	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: center
+	flex: 0 0 392px
+	align-items: center
+	height: 528px
+	background-image: url(../images/dist/svg/card.svg)
+	background-repeat: no-repeat
+	background-size: cover
+	+lg(flex,0 0 304px)
+	+lg(height, 459px)
+	+lg(background-image, url(../images/dist/svg/card-small.svg))
+	font-size: 3rem
+	font-weight: 600
+	line-height: 1
+	text-align: center
+	+lg(font-size, 2.5rem)
+	&__title
+		margin-bottom: 1em
+	&__img
+		max-width: 312px
+		height: auto
+		+lg(max-width, 260px)
+	&__label
+		position: absolute
+		top: -32px
+		right: 32px
+		width: 102px
+		height: 64px
+		background-repeat: no-repeat 
+		background-size: contain
+		z-index: 10
+		+lg(width, 82px)
+		+lg(height, 52px)
+		+lg(top, -26px)
+		+sm(top, 80px)
+	& > button 
+		max-width: 240px
+		min-width: 240px
+		margin-left: 0
+	&__price
+		margin-top: auto
+		margin-bottom: 1em
+		color: $accent
+
+.card-top
+	@extend .card
+	background-image: url(../images/dist/svg/card-top.svg)
+	+lg(background-image, url(../images/dist/svg/card-top-small.svg))

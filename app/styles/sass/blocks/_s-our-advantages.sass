@@ -1,0 +1,63 @@
+// SECTION OUR ADVANTAGES
+	
+.оur-advantages
+	position: relative
+	+row-flex()
+	justify-content: flex-end
+	margin-top: 8rem
+	+lg(margin-top, 5rem)
+	+md(justify-content, space-around)
+	+md(margin-top, 4rem)
+	+sm(margin-top, 3rem)
+	& > span
+		position: absolute
+		left: -60px
+		top: -48px
+		+col() 
+		+size(3)
+		width: 283px
+		height: 480px
+		background-image: url(../images/dist/svg/logo-decor.svg)
+		background-repeat: no-repeat 
+		background-size: contain
+		+lg(max-width, 243px)	
+		+to(1340px)
+			left: -20px
+		+lg(top, -10px)
+		+md(display, none)
+	&__list
+		+col() 
+		+size(9)
+		+row-flex()
+		justify-content: space-between
+		+size-md(12)
+	&__item
+		+col()
+		+size(6)
+		margin-top: 4rem
+		&:nth-child(1),
+		&:nth-child(2) 
+			margin-top: 0
+		&:nth-child(2)
+			+xs(margin-top, 3rem)
+		// +size-sm(9)
+		+size-xs(12)
+		+sm(margin-top, 3rem)
+	&__subtitle
+		display: flex
+		align-items: center
+		margin-bottom: 1.5rem
+		+sm(margin-bottom, 1rem)
+		& > h3 
+			max-width: 260px
+			+lg(max-width, 220px)
+			+sm(max-width, 190px)
+		& > span
+			flex: 0 0 39px 
+			height: 72px
+			margin-right: 1.5rem
+			background-image: url(../images/dist/svg/bullet-b.svg)
+			background-repeat: no-repeat
+			background-size: contain
+			+lg(flex, 0 0 35px)
+			+lg(height, 62px)

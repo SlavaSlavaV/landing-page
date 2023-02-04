@@ -1,0 +1,149 @@
+// FOOTER
+
+.footer
+	padding-top: 12rem
+	padding-bottom: 8rem
+	background-color: #C7C7C7
+	+sm(padding-top, 8rem)
+	+sm(padding-bottom, 6rem)
+	&__row
+		+row-flex()
+	&__logo
+		+col()
+		+size(4)
+		+size-md(3)
+		+size-sm(7)
+		+size-xs(12)
+		+xs(margin-bottom, 4rem)
+	&__logo-img
+		max-width: 20rem
+		height: auto
+		margin-top: -25px
+		+md(max-width, 16rem)
+		+md(margin-top, -20px)
+	&__title
+		margin-bottom: 3rem
+		@extend h3 
+		line-height: 1
+		white-space: nowrap
+		+sm(margin-bottom, 2rem)
+	&__nav
+		+col()
+		+size(3)
+		+size-lg(4)
+		+size-sm(5)
+		+size-xs(12)
+		+lg(margin-bottom, 4rem)
+	&__nav-list
+		display: flex
+		flex-direction: column
+	&__nav-item
+		margin-bottom: 1.5rem
+		+sm(margin-bottom, 1rem)
+		&:last-child
+			margin-bottom: 0
+	&__nav-link
+		color: $txtcolor
+		transition: color 0.3s ease
+		+sm(font-size, 1.6rem)
+		+from(992px)
+			&:hover,
+			&:focus
+				color: $accent
+	&__contact
+		+col()
+		+size(3)
+		+size-lg(4)
+		+size-md(5)
+		+size-sm(7)
+		+size-xs(12)
+		+xs(margin-bottom, 4rem)
+	&__contact-list
+		display: flex
+		flex-direction: column
+	&__contact-item
+		display: flex
+		margin-bottom: 1.5rem
+		+sm(margin-bottom, 1rem)
+		+sm(font-size, 1.6rem)
+	&__contact-mail
+		position: relative
+		padding-left: 34px
+		@extend .footer__nav-link
+		+sm(padding-left, 27px)
+		&::before 
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 26px
+			height: 26px
+			background-image: url(../images/dist/svg/mail.svg)
+			background-repeat: no-repeat
+			background-size: contain
+			+sm(width, 22px)
+			+sm(height, 22px)
+	&__contact-work
+		position: relative
+		padding-left: 34px
+		+sm(padding-left, 22px)
+		&::before 
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 22px
+			height: 22px
+			background-image: url(../images/dist/svg/clock.svg)
+			background-repeat: no-repeat
+			background-size: contain
+			+sm(width, 18px)
+			+sm(height, 18px)	
+	&__contact-phone
+		position: relative
+		padding-left: 32px
+		font: 
+			weight: 600
+			size: 2.4rem
+		+sm(font-size, 2.2rem)
+		@extend .footer__nav-link
+		+sm(padding-left, 27px)
+		&::before 
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 24px
+			height: 30px
+			background-image: url(../images/dist/svg/phone.svg)
+			background-repeat: no-repeat
+			background-size: contain
+			+sm(width, 22px)
+			+sm(height, 27px)
+	&__social
+		+col()
+		+size(2)
+		display: flex
+		flex-direction: column
+		+size-lg(4)
+		+size-sm(5)
+		+size-xs(12)
+	&__social-list
+		display: flex
+		flex-direction: column
+	&__social-item
+		margin-bottom: 1.5rem
+		+sm(margin-bottom, 1rem)
+		& > a 
+			@extend .footer__nav-link
+
+.footer-bottom 
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100vw
+	height: 6rem
+	background-color: #969696
+	& > span 
+		font-size: 1.4rem
+		line-height: 1

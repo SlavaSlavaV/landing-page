@@ -1,0 +1,218 @@
+// FIRST SCREEN
+
+.first-screen
+	position: relative
+	min-width: 100%
+	min-height: 70rem
+	max-height: 70rem
+	padding-top: 1.5rem
+	padding-bottom: 6rem
+	background-color: $bg
+	background-size: cover
+	background-repeat: no-repeat
+	+md(max-height, 100%)
+	&::before 
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: rgba($bg, .92)
+		+md(max-height, 100%)
+		+md(background-color, rgba($bg, 1))
+	&__content
+		position: relative
+		z-index: 10
+	&__title
+		max-width: 80rem
+		margin-top: 5rem
+		margin-bottom: 4rem
+		+md(max-width, 69rem)
+		+md(margin-top, 4rem)
+		+sm(max-width, 56rem)
+		+sm(margin-top, 3rem)
+	&__advantages
+		display: flex
+		+md(flex-direction, column)
+	&__advantages-list
+		display: flex
+		flex-direction: column
+		flex: 0 0 19rem
+		margin-right: 4rem
+		+md(flex-direction, row)
+		+md(align-items, flex-end)
+		+md(flex, 1 1 auto)
+		+md(margin-right, 0)
+		+md(margin-bottom, 20px)
+	&__advantages-item
+		font-size: 1.6rem
+		max-width: 20rem
+		& > span 
+			color: $accent
+	&__advantages-icon
+		width: 50px
+		height: 50px
+		margin-bottom: 15px
+		background-repeat: no-repeat
+		background-size: contain
+		+md(margin-bottom, 0)
+		+md(margin-right, 20px)
+	&__img-block
+		position: relative
+		top: 155px
+		left: 0
+		z-index: -1
+		+md(top, 90px)
+		+sm(height, 46rem)
+		+sm(top, 0)
+		+xs(height, 40rem)
+	&__img-main
+		position: absolute
+		bottom: 0
+		right: 0
+		max-width: 41.2rem
+		height: auto
+		+lg(max-width, 35rem)
+		+sm(right, auto)
+		+sm(left, 0)
+		+sm(bottom, auto)
+		+sm(top, 0)
+		+xs(max-width, 29rem)
+	&__img-secondary
+		position: absolute
+		bottom: 60px
+		right: 360px
+		z-index: 11
+		max-width: 12.2rem
+		height: auto
+		+lg(max-width, 9.2rem)
+		+lg(right, 300px)
+		+sm(right, auto)
+		+sm(left, 55px)
+		+sm(bottom, 50px)
+		+xs(max-width, 8rem)
+		+xs(left, 45px)
+		+xs(bottom, 60px)
+	&__img-txt
+		position: absolute
+		bottom: 4px
+		right: 415px
+		max-width: 32rem
+		font-size: 1.8rem
+		+lg(right, 345px)
+		+md(bottom, -55px)
+		+md(right, 60px)
+		+sm(right, auto)
+		+sm(left, 0)
+		+sm(bottom, 0)
+		+sm(font-size, 1.6rem)
+		+xs(bottom, 10px)
+		& > span 
+			text-transform: uppercase
+			font-weight: 600
+			color: $accent
+	&__button
+		display: flex
+		margin-top: 6rem
+		+md(margin-top, 4rem)
+		+sm(justify-content, center)
+		+xs(margin-top, 3rem)
+
+// header
+
+.header
+	position: relative
+	z-index: 10
+	min-width: 100%
+	&__content
+		display: flex
+		justify-content: space-between
+		+xs(flex-direction, column)
+	&__logo
+		max-width: 13rem
+		height: auto
+		flex: 0 0 auto
+		+sm(max-width, 10rem)
+		& > a 
+			display: inline-block
+	&__nav
+		margin-top: 1.2rem
+		margin-left: 2.5rem
+		+md(display, none)
+	&__nav-list
+		display: flex
+		flex-wrap: wrap
+	&__nav-item
+		margin-right: 25px
+		margin-bottom: 15px
+		& > a 
+			font-weight: 600
+			color: $txtcolor
+			transition: color 0.3s ease
+			+from(992px)
+				&:hover,
+				&:focus
+					color: $accent
+	&__location
+		display: flex
+		margin-top: 1.2rem
+		flex-direction: column
+		justify-content: space-between
+		flex: 0 0 22rem
+		height: 6.3rem
+		+md(flex-direction, row-reverse)
+		+md(flex, 1 0 auto)
+		+md(height, 3rem)
+		+md(margin-top, 1rem)
+		+sm(flex-direction, column)
+		+sm(flex, 0 0 auto)
+		+sm(height, 5.5rem)
+		+xs(margin-top, 2rem)
+	&__phone
+		position: relative
+		padding-left: 31px
+		+sm(padding-left, 24px)
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 23px
+			height: 29px
+			background-image: url(../images/dist/svg/phone.svg)
+			background-repeat: no-repeat
+			background-size: contain
+			+sm(width, 20px)
+			+sm(height, 25px)
+		& > a 
+			font-weight: 600
+			font-size: 2rem
+			color: $txtcolor
+			+sm(font-size, 1.8rem)
+			+from(992px)
+				&:hover,
+				&:focus
+					color: $accent
+	&__work
+		position: relative
+		padding-left: 25px
+		font-size: 1.5rem
+		line-height: 1
+		+md(margin, auto)
+		+sm(margin,0)
+		+sm(padding-left, 20px)
+		+sm(font-size, 1.4rem)
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			width: 18px
+			height: 18px
+			background-image: url(../images/dist/svg/clock.svg)
+			background-repeat: no-repeat
+			background-size: contain
+			+sm(width, 16px)
+			+sm(height, 16px)
+

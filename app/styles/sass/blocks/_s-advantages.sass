@@ -1,0 +1,27 @@
+// SECTION ADVANTAGES
+
+.advantages
+	+row-flex()
+	justify-content: space-between
+	+sm(flex-direction, column-reverse)
+	&__img
+		+col() 
+		+size(6)
+		+size-sm(12)
+	&__content
+		+col() 
+		+size(5)
+		+size-md(6)
+		+size-sm(12)
+		+sm(margin-bottom, 3rem)
+	&__item
+		margin-top: 3rem
+	&__subtitle
+		display: flex
+		align-items: center
+		margin-bottom: 1rem
+		& > span 
+			margin-right: 2rem
+	&__txt
+		margin-left: 4rem
+		max-width: 31.5rem

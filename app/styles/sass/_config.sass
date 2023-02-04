@@ -1,0 +1,232 @@
+// USER VARIABLES SECTION
+$accent: #c33100 // Accent Color
+$hover: #932500 // Hover Color
+$active: #ff4e13 // Active Color
+$txtcolor: #151515 // Text Color
+$placeholderColor: #898989 // Placeholder Color
+$bg: #f4f4f4 // Background Color
+$light: #ffffff // Light Color
+$userFont: PublicSans, sans-serif // User Font Family
+$fontSize: 18px // Body Font Size
+$fontWeight: 400 // Body Font Weight
+$lineHeight: 1.4 // Document Line Height
+$systemFont: -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif // System Font Family
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('PublicSans', normal, 400, '../fonts/PublicSans-Regular.woff2')
+@include font('PublicSans', normal, 600, '../fonts/PublicSans-SemiBold.woff2')
+@include font('PublicSans', normal, 700, '../fonts/PublicSans-Bold.woff2')
+
+// IMPORT SECTION
+
+@import 'smart-grid' // grid 'app/styles/sass/smart-grid'
+@import 'node_modules/normalize.css/normalize' // normalize css
+@import 'node_modules/magnific-popup/dist/magnific-popup' // Magnific Popup css
+
+// Animate.css
+@import 'node_modules/animate.css/source/_base'
+@import 'node_modules/animate.css/source/_vars'
+@import 'node_modules/animate.css/source/fading_entrances/fadeIn'
+@import 'node_modules/animate.css/source/bouncing_entrances/bounceIn'
+@import 'node_modules/animate.css/source/attention_seekers/tada'
+
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+
+// GENERAL DOCUMENT STYLES
+
+*,
+*::before,
+*::after
+	box-sizing: border-box
+
+html 
+	font-size: 62.5%
+
+html, body 
+	width: 100%
+	height: 100%
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary
+	display: block
+
+ul 
+	margin: 0
+	padding: 0
+
+ul li, ol li
+	margin: 0
+	padding: 0
+	list-style: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+a
+	background-color: transparent
+	text-decoration: none
+
+a:active, a:hover
+	outline: 0
+
+a:active 
+	color: $active
+
+img
+	border-style: none
+	max-width: 100%
+
+::placeholder
+	font-size: $fontSize
+	color: $placeholderColor
+
+// ::selection
+// 	background-color: $accent
+// 	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: #c30031
+		box-shadow: 0px 0px 5px #c30031
+	&:required:valid
+		border-color: #0062C3
+		box-shadow: 0px 0px 5px #0062C3
+
+button
+	padding: 0
+	border: none
+	font: inherit
+	color: inherit
+	background-color: transparent
+	cursor: pointer
+	&:focus,
+	&:active 
+		outline: none
+
+.button
+	position: relative
+	z-index: 20
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	min-height: 3em // 54px
+	padding: 0 2em // 36px
+	margin-left: 1rem
+	font: 
+		family: $userFont
+		weight: 600
+		size: 18px // 1.8rem
+	line-height: 1
+	color: $light
+	+sm(font-size, 16px)
+	& > span 
+		transition: transform 0.3s ease
+	+from(992px)
+		&:hover span,
+		&:focus span
+			transform: skew(-21deg)
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		z-index: -1
+		border: 3px solid $active
+		background-color: $accent	
+		transform: skew(-21deg)
+		transition: all 0.3s ease
+	+from(992px)
+		&:hover::before,
+		&:focus::before
+			background-color: $hover
+	&:active::before
+		background-color: $active
+
+.button-wrap 
+	display: flex
+	justify-content: center
+
+h1,
+h2
+	margin: 0
+	font-family: $userFont
+	font-weight: 700
+
+h1
+	font-size: 4.6rem
+	+lg(font-size, 4rem)
+	+md(font-size, 3.2rem)
+	+sm(font-size, 3rem)
+	& > span 
+		color: $accent
+	
+h2 
+	font-size: 3.8rem
+	+lg(font-size, 3.2rem)
+	+md(font-size, 2.8rem)
+	+sm(font-size, 2.5rem)
+	& > span 
+		color: $accent
+
+h3 
+	margin: 0
+	font-family: $userFont
+	font-weight: 600
+	font-size: 3rem
+	+lg(font-size, 2.6rem)
+	+sm(font-size, 2.2rem)
+
+p 
+	margin: 0
+	+sm(font-size, 1.6rem)
+	& > span 
+		color: $accent
+
+body
+	min-width: 320px
+	min-height: 100vh
+	position: relative
+	overflow-x: hidden
+	font-family: $userFont
+	font-size: $fontSize
+	font-weight: $fontWeight
+	line-height: $lineHeight
+	color: $txtcolor
+
+.container
+	display: flex
+	flex-direction: column 
+	min-height: 100vh
+
+main 
+	flex: 1 1 auto
+
+.wrapper 
+	+wrapper()
+
+.inner 
+	padding: 12rem 0
+	+lg(padding, 10rem 0)
+	+md(padding, 8rem 0)
+	+sm(padding, 6rem 0)
+
+.theme-gray
+	background-color: $bg
+
+.map 
+	display: flex

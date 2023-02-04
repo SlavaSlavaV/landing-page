@@ -1,0 +1,107 @@
+// CONNECT POPUP
+
+.connect-popup
+	position: fixed
+	right: 5%
+	bottom: 19%
+	z-index: 1000
+	display: none
+	width: 260px
+	height: auto
+	padding: 20px 30px
+	background-color: $light
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.25)
+	border-radius: 10px
+	+md(width, 100vw)
+	+md(height, 100vh)
+	+md(right, 0)
+	+md(bottom, 0)
+	+md(border-radius, none)
+	+md(box-shadow, none)
+	&__content
+		font-size: 1.8rem
+		text-align: center
+	&__list
+		display: flex
+		justify-content: space-between
+		max-width: 300px
+		margin: 2.5rem auto 0 auto
+	&__item
+		display: flex
+		flex-direction: column
+		align-items: center
+		font-size: 1.2rem
+		line-height: 1
+	&__linck
+		width: 54px
+		height: 54px
+		margin-bottom: 12px
+
+// button
+
+.button-connect
+	position: fixed
+	display: flex
+	bottom: 10%
+	right: 5%
+	z-index: 1010
+	width: 64px
+	height: 64px
+	padding: 15px
+	cursor: pointer
+	text-align: center
+	line-height: 0
+	border-radius: 50%
+	background-color: $accent
+	+md(bottom, 3%)
+	+md(right, 3%)
+	&::after, 
+	&::before
+		content: ''
+		position: absolute
+		border: 2px solid $accent
+		left: -15px
+		opacity: 0
+		right: -15px
+		top: -15px
+		bottom: -15px
+		border-radius: 50%
+		animation: pulse 2.5s linear infinite
+	&::after
+		animation-delay: 1.25s
+	&__open
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&__close
+		position: absolute
+		top: 50%
+		left: 50%
+		display: none
+		transform: translate(-50%, -50%)
+
+.connect-open.button-connect
+	background-color: $light
+	border: 2px solid $accent
+	box-shadow: 0 0 10px rgba($accent, 0.25)
+	&::after,
+	&::before
+		animation-play-state: paused
+		display: none
+	& > .button-connect__open
+		display: none
+	& > .button-connect__close
+		display: block
+
+@keyframes pulse
+	0%
+		transform: scale(0.5)
+		opacity: 0
+
+	50%
+		opacity: 1
+
+	100%
+		transform: scale(1.2)
+		opacity: 0
